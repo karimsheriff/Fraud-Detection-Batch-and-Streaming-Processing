@@ -29,6 +29,7 @@ In this project, We designed and implemented a robust data pipeline that integra
   </li>
 </ol>
 <br>
+
 ## Data Ingestion:
 
 <p><b>First, </b> We import our trasactional data from Maria DB into Hive Table on HDFS using SQOOP.  </p>
