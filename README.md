@@ -11,7 +11,23 @@ In this project, We designed and implemented a robust data pipeline that integra
 
 ## Now, Let’s dive deeper into how the data pipeline operates:
 
-### Data Sources:
+## Data Sources:
+<ol>
+  <li>
+    Maria DB
+    <p>Transactions data are placed in transactions table at Mariadb.</p>
+  </li>
+  
+  <li>
+    CSV File
+    <p>Transactions CSV File on the local disk contains transaction data.</p>
+  </li>
+  
+  <li>
+    Streams Of Data
+    <p>Python Application Produce transactions data into our kafka topic.</p>
+  </li>
+</ol>
 
 # Fraud Detection Models Using PySpark
 
@@ -61,25 +77,6 @@ Our focus is on **recall**, as detecting fraudulent transactions is critical in 
 ## Usage
 - Run the EDA notebook (`sic-eda-ml.ipynb`) to explore the dataset and identify patterns.
 - Use the preprocessing and modeling notebooks (`sic_preprocessing_SVM_Random_forest.ipynb`, `sic-LogisticRegression-fraud-detection.ipynb`, `sic_XGboosting_fraud_detection.ipynb`) to replicate the model training process and compare results.
-
-=======
-<ol>
-  <li>
-    Maria DB
-    <p>Transactions data are placed in transactions table at Mariadb.</p>
-  </li>
-  
-  <li>
-    CSV File
-    <p>Transactions CSV File on the local disk contains transaction data.</p>
-  </li>
-  
-  <li>
-    Streams Of Data
-    <p>Python Application Produce transactions data into our kafka topic.</p>
-  </li>
-</ol>
-
 
 
 ## Dashboards Overview ✨✨
