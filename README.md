@@ -10,8 +10,16 @@ In this project, We designed and implemented a robust data pipeline that integra
 <br>
 
 ## Now, Let’s dive deeper into how the data pipeline operates:
-
-## Data Sources:
+## Table of Contents
+- [Data Sources](#data-sources)
+- [Data Ingestion](#data-ingestion)
+- [Data Analysis](#data-analysis)
+- [Preprocessing](#preprocessing)
+- [Modeling](#modeling)
+- [Results](#results)
+- [Usage](#usage)
+- [Dashboards](#dashboards)
+### Data Sources:
 <ol>
   <li>
     Maria DB
@@ -61,20 +69,9 @@ here is where you could find our spark streaming application which works as a co
 
 <p><b>So Now, </b> We have the data ingested and integrated from 3 different data sources and diferent formats into the same hive table on HDFS Ready to be analyzed or used to develop ML models to detect Fraud Transactions as we will see.  </p> 
 <br>
+
 # Fraud Detection Models Using PySpark
-
-## Overview
 This project is focused on detecting fraudulent transactions using PySpark. We first perform exploratory data analysis (EDA) to uncover patterns and insights, followed by preprocessing steps to prepare the data for machine learning. We test four different machine learning models and compare their performance, focusing on **recall** as the key metric due to its importance in detecting fraudulent transactions. The model that gives us the best results is **XGBoost**.
-
-## Table of Contents
-- [Data Analysis](#data-analysis)
-- [Preprocessing](#preprocessing)
-- [Modeling](#modeling)
-- [Results](#results)
-- [Installation](#installation)
-- [Usage](#usage)
-
-
 
 ## Data Analysis
 We begin with exploratory data analysis (EDA) to better understand the dataset, explore trends, and identify possible data issues. EDA helps to guide our preprocessing and modeling efforts by identifying key insights and patterns, especially those related to fraudulent transactions.
