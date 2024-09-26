@@ -28,7 +28,38 @@ In this project, We designed and implemented a robust data pipeline that integra
     <p>Python Application Produce transactions data into our kafka topic.</p>
   </li>
 </ol>
+<br>
+## Data Ingestion:
 
+<p><b>First, </b> We import our trasactional data from Maria DB into Hive Table on HDFS using SQOOP.  </p>
+ <pre>
+
+sqoop import --connect jdbc:mysql://localhost/fraud_detection \
+--username student --password student \
+--fields-terminated-by '\t' \
+--table transactions \
+--hive-import --hive-database 'fraud_detection' \
+--hive-table 'transactions' \
+--split-by cc_num
+
+ </pre>
+<br>
+
+<p><b>Second, </b> We read the data from transactions csv file on the local disk and put it into the same hive table using pyspark.  </p>
+ <pre>
+
+fraud_df = spark.read.csv("file:///home/student/Fraud_detection_project/data/fraudTrain.csv", header=True)
+
+fraud_df.write.mode("append").saveAsTable("fraud_detection.transactions")
+</pre>
+<br>
+<p><b>and Finally, </b>using kafka and spark streaming, We read streams of data from our kafka topic, we process and restructure it to fit our hive table structure, and after that we but it into the table.  </p>
+  <pre>
+here is where you could find our spark streaming application which works as a consumer.<a href="Spark Streaming Application.ipynb">here</a><br>
+</pre>
+
+<p><b>So Now, </b> We have the data ingested and integrated from 3 different data sources and diferent formats into the same hive table on HDFS Ready to be analyzed or used to develop ML models to detect Fraud Transactions as we will see.  </p> 
+<br>
 # Fraud Detection Models Using PySpark
 
 ## Overview
