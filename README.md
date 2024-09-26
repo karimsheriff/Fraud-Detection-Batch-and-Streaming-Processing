@@ -12,3 +12,19 @@ In this project, We designed and implemented a robust data pipeline that integra
 ## Now, Let’s dive deeper into how the data pipeline operates:
 
 ### Data Sources:
+<ol>
+  <li>
+    Maria DB
+    <p>Transactions data are placed in transactions table at Mariadb.</p>
+  </li>
+  
+  <li>
+    CSV File
+    <p>Transactions CSV File on the local disk contains transaction data.</p>
+  </li>
+  
+  <li>
+    Streams Of Data
+    <p>Python Application Produce transactions data into our kafka topic.</p>
+  </li>
+</ol>
