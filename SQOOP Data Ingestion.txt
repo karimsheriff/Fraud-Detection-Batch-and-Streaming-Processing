@@ -1,0 +1,9 @@
+# import data from mysql to hive using sqoop
+
+sqoop import --connect jdbc:mysql://localhost/fraud_detection \
+--username student --password student \
+--fields-terminated-by '\t' \
+--table transactions \
+--hive-import --hive-database 'fraud_detection' \
+--hive-table 'transactions' \
+--split-by cc_num

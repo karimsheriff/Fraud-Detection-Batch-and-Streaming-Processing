@@ -1,0 +1,11 @@
+#Create KafkaTopic
+
+kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic fraud_traindata
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+#Run the python application and kafka producer
+
+python3 stream_json.py fraudtraindata 100 /home/student/Fraud_detection_project/data/fraud_train.json
